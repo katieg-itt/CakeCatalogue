@@ -6,6 +6,8 @@ package cakecatalogue;
  */
 public class Ingredents {
     
+    //Change to abstract class, move unique atributes to cakeingredients.java and cupcakeingredients.java
+    
     private Flavour flavour;
     private Filling filling;
     private Icings icings;

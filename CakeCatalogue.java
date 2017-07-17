@@ -1,12 +1,6 @@
 package cakecatalogue;
 
 
-import cakecatalogue.Ingredents;
-import cakecatalogue.CakeInventory;
-import cakecatalogue.Filling;
-import cakecatalogue.Flavour;
-import cakecatalogue.Icings;
-import cakecatalogue.Shape;
 import java.util.Iterator;
 import java.util.List;
 
@@ -43,7 +37,7 @@ public class CakeCatalogue {
         cakeInventory.addCake(Flavour.Carrot,Filling.creamCheese,Shape.Heart,Icings.butterCream, 5, 6);
         cakeInventory.addCake(Flavour.Vanilla,Filling.vanillaCream,Shape.Round,Icings.butterCream, 9, 9);
         cakeInventory.addCake(Flavour.Chocolate,Filling.chocolateFudge,Shape.Heart,Icings.chocolateFudge, 20, 14);
-        cakeInventory.addCake(Flavour.Vanilla,Filling.vanillaCream,Shape.Square,Icings.Fondant, 25, 24);
+        cakeInventory.addCake(Flavour.Vanilla,Filling.vanillaCream,Shape.Square,Icings.fondant, 25, 24);
     }
 }
 

@@ -4,23 +4,14 @@ package cakecatalogue;
  *
  * @author katie
  */
-public class Cake {
+public class Cake extends BakedGoods{
 
     Ingredents ingre;
     private float price;
     private int size;
 
-    public Cake(Flavour flavour, Filling filling,Shape shape, Icings icings, int size, float price ) {
-        this.ingre = new Ingredents(flavour,filling,icings, shape, size);
-        this.price = price;
-        this.size = size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-    public void setPrice(float newPrice){
-        this.price = newPrice;
+    public Cake(Ingredents ingre, float price) {
+       super(price,ingre);
     }
 
     public int getSize() {
@@ -37,3 +28,9 @@ public class Cake {
 
 
 }
+
+
+//Flavour flavour, Filling filling,Shape shape, Icings icings, int size
+//this.ingre = new Ingredents(flavour,filling,icings, shape, size);  this.price = price; this.size = size;
+        
+       

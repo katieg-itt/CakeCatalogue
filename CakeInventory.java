@@ -22,8 +22,10 @@ public class CakeInventory {
                             Icings icings, 
                             int size,
                             float price){
+         
+        Ingredents ingre = new Ingredents(flavour, filling, icings, shape, size); 
 
-        Cake cake = new Cake(flavour, filling, shape, icings, size, price);
+        Cake cake = new Cake(ingre, price);
         Cakes.add(cake);
     }
      public Cake getCake(String flavour){

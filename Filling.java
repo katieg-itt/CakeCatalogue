@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cakecatalogue;
 
 /**
@@ -11,7 +6,7 @@ package cakecatalogue;
  */
 public enum Filling {
     
-    chocolateFudge, vanillaCream, creamCheese, chocolateGanache;
+    chocolateFudge, vanillaCream, creamCheese, chocolateGanache,lemonCream, oreoCream, chocolateMoose;
     
     public String toString(){
         switch(this) {
@@ -19,6 +14,9 @@ public enum Filling {
             case vanillaCream : return "Vanilla Cream";
             case creamCheese : return "Cream Cheese";
             case chocolateGanache : return "Chocolate Ganache";
+            case lemonCream : return "lemon Cream";
+            case oreoCream : return "Oreao Cream";
+            case chocolateMoose : return "Cocolate Moose";
             default : return "unknown";
         }
     }
