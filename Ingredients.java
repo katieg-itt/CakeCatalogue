@@ -4,7 +4,7 @@ package cakecatalogue;
  *
  * @author katie
  */
-public class Ingredents {
+public class Ingredients {
     
     //Change to abstract class, move unique atributes to cakeingredients.java and cupcakeingredients.java
     
@@ -15,7 +15,7 @@ public class Ingredents {
     private int size;
     
     
-    public Ingredents(Flavour flavour,Filling filling,Icings icings,Shape shape, int size){
+    public Ingredients(Flavour flavour,Filling filling,Icings icings,Shape shape, int size){
         this.flavour = flavour;
         this.filling = filling;
         this.icings = icings;
@@ -43,7 +43,7 @@ public class Ingredents {
         return size;
     }
     
-    public boolean compare(Ingredents otherIngre) {
+    public boolean compare(Ingredients otherIngre) {
         if (filling != otherIngre.getFilling()) {
             return false;
         }

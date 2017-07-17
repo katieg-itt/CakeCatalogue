@@ -23,7 +23,7 @@ public class CakeInventory {
                             int size,
                             float price){
          
-        Ingredents ingre = new Ingredents(flavour, filling, icings, shape, size); 
+        Ingredients ingre = new Ingredients(flavour, filling, icings, shape, size); 
 
         Cake cake = new Cake(ingre, price);
         Cakes.add(cake);
@@ -38,7 +38,7 @@ public class CakeInventory {
         return null;
     }
      
-     public List searchCake(Ingredents seachIngre){
+     public List searchCake(Ingredients seachIngre){
          System.out.println("Checking Cakes");
          List compareCakes = new LinkedList();
          for(Iterator i = Cakes.iterator(); i.hasNext();){

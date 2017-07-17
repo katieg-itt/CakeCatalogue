@@ -15,14 +15,14 @@ public class CakeCatalogue {
         CakeInventory cakeInventory = new CakeInventory();
         addCakeInventory(cakeInventory);
         
-        Ingredents customerRequest = new Ingredents (Flavour.Vanilla, Filling.vanillaCream,
+        Ingredients customerRequest = new Ingredients (Flavour.Vanilla, Filling.vanillaCream,
                                                 Icings.butterCream, Shape.Round, 9);
         List compareCakes = cakeInventory.searchCake(customerRequest);
         if (!compareCakes.isEmpty()){
             System.out.println("These cakes are avalible:");
             for (Iterator i = compareCakes.iterator(); i.hasNext();) {
                 Cake cake = (Cake)i.next();
-                Ingredents ingre = cake.getLists();
+                Ingredients ingre = cake.getLists();
                 System.out.println("In store we have avalible a " + ingre.getShape() + " " + cake.getSize()+ " inch " + 
                         ingre.getFlavour()  + " flavour cake with " + ingre.getFilling() + " icing. It is " + cake.getPrice() + " euro" );
             }

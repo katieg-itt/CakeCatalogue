@@ -9,9 +9,9 @@ public abstract class BakedGoods {
     //Parent class for cakes and cupcakes
     
     private double price;
-    private Ingredents ingre;
+    private Ingredients ingre;
     
-    public BakedGoods(double price, Ingredents ingre){
+    public BakedGoods(double price, Ingredients ingre){
         this.price = price;
         this.ingre = ingre;
     }
@@ -23,7 +23,7 @@ public abstract class BakedGoods {
         this.price = newPrice;
     }
     
-    public Ingredents getcakeSpec(){
+    public Ingredients getcakeSpec(){
         return ingre;
     }
 }

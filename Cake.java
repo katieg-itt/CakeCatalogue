@@ -6,11 +6,11 @@ package cakecatalogue;
  */
 public class Cake extends BakedGoods{
 
-    Ingredents ingre;
+    Ingredients ingre;
     private float price;
     private int size;
 
-    public Cake(Ingredents ingre, float price) {
+    public Cake(Ingredients ingre, float price) {
        super(price,ingre);
     }
 
@@ -22,7 +22,7 @@ public class Cake extends BakedGoods{
         this.size = size;
     }
     
-   public Ingredents getLists(){
+   public Ingredients getLists(){
        return ingre;
 }
 
@@ -31,6 +31,6 @@ public class Cake extends BakedGoods{
 
 
 //Flavour flavour, Filling filling,Shape shape, Icings icings, int size
-//this.ingre = new Ingredents(flavour,filling,icings, shape, size);  this.price = price; this.size = size;
+//this.ingre = new Ingredients(flavour,filling,icings, shape, size);  this.price = price; this.size = size;
         
        
