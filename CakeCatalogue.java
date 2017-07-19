@@ -15,16 +15,25 @@ public class CakeCatalogue {
         CakeInventory cakeInventory = new CakeInventory();
         addCakeInventory(cakeInventory);
         
-        Ingredients customerRequest = new Ingredients (Flavour.Vanilla, Filling.vanillaCream,
-                                                Icings.butterCream, Shape.Round, 9);
+        Ingredients customerRequest = new CakeIngredients (Flavour.Vanilla, Filling.vanillaCream,
+                                                Icings.butterCream, Shape.Round);
         List compareCakes = cakeInventory.searchCake(customerRequest);
         if (!compareCakes.isEmpty()){
             System.out.println("These cakes are avalible:");
             for (Iterator i = compareCakes.iterator(); i.hasNext();) {
-                Cake cake = (Cake)i.next();
-                Ingredients ingre = cake.getLists();
-                System.out.println("In store we have avalible a " + ingre.getShape() + " " + cake.getSize()+ " inch " + 
-                        ingre.getFlavour()  + " flavour cake with " + ingre.getFilling() + " icing. It is " + cake.getPrice() + " euro" );
+                BakedGoods baked = (BakedGoods)i.next();
+                
+                if(baked instanceof Cake) {
+                    Cake cake = (Cake)baked;
+                    CakeIngredients ingre = (CakeIngredients)cake.getcakeSpec();
+                    System.out.println("In store we have avalible a " + ingre.getShape() + " " + cake.getSize()+ " inch " + 
+                            ingre.getFlavour()  + " flavour cake with " + ingre.getFilling() + " icing. It is " + cake.getPrice() + " euro" );
+                } else if( baked instanceof Cupcake) {
+                    Cupcake cupcake = (Cupcake)baked;
+                    CupcakeIngredients CupcakeIngre = (CupcakeIngredients)cupcake.getcakeSpec();
+                    System.out.println("In store we have avalible " + cupcake.getBoxCount() + " " + CupcakeIngre.getFlavour() + "Flavour cupcake with "
+                    + CupcakeIngre.getFilling() + "filling and " + CupcakeIngre.getIcings() + "icing. The price is " + cupcake.getPrice() + " euro" );
+                }
             }
         } else {
             System.out.println("The selection of cakes you have requested are unavalible.");
@@ -32,12 +41,19 @@ public class CakeCatalogue {
     }
     
     private static void addCakeInventory (CakeInventory cakeInventory){
-        cakeInventory.addCake(Flavour.Vanilla,Filling.chocolateFudge,Shape.Round, Icings.butterCream, 9, 10);
-        cakeInventory.addCake(Flavour.Chocolate,Filling.vanillaCream,Shape.Square,Icings.chocolateFudge, 12, 16);
-        cakeInventory.addCake(Flavour.Carrot,Filling.creamCheese,Shape.Heart,Icings.butterCream, 5, 6);
-        cakeInventory.addCake(Flavour.Vanilla,Filling.vanillaCream,Shape.Round,Icings.butterCream, 9, 9);
-        cakeInventory.addCake(Flavour.Chocolate,Filling.chocolateFudge,Shape.Heart,Icings.chocolateFudge, 20, 14);
-        cakeInventory.addCake(Flavour.Vanilla,Filling.vanillaCream,Shape.Square,Icings.fondant, 25, 24);
+        cakeInventory.addCake(new CakeIngredients(Flavour.Vanilla,  Filling.chocolateFudge, Icings.butterCream,     Shape.Round),    9,     10);
+        cakeInventory.addCake(new CakeIngredients(Flavour.Chocolate,Filling.vanillaCream,   Icings.chocolateFudge,  Shape.Square),   12,    16);
+        cakeInventory.addCake(new CakeIngredients(Flavour.Carrot,   Filling.creamCheese,    Icings.butterCream,     Shape.Heart),    5,     6);
+        cakeInventory.addCake(new CakeIngredients(Flavour.Vanilla,  Filling.vanillaCream,   Icings.butterCream,     Shape.Round),    9,     9);
+        cakeInventory.addCake(new CakeIngredients(Flavour.Chocolate,Filling.chocolateFudge, Icings.chocolateFudge,  Shape.Heart),    20,    14);
+        cakeInventory.addCake(new CakeIngredients(Flavour.Vanilla,  Filling.vanillaCream,   Icings.fondant,         Shape.Square),   25,    24);
+        
+        cakeInventory.addCupCake(new CupcakeIngredients(Flavour.Vanilla,   Filling.vanillaCream,   Icings.butterCream,     CupcakeSize.small),  4, 5);
+        cakeInventory.addCupCake(new CupcakeIngredients(Flavour.Chocolate, Filling.chocolateFudge, Icings.chocolateFudge,  CupcakeSize.large),  2, 24);
+        cakeInventory.addCupCake(new CupcakeIngredients(Flavour.Vanilla,   Filling.chocolateFudge, Icings.butterCream,     CupcakeSize.medium), 6, 10);
+        cakeInventory.addCupCake(new CupcakeIngredients(Flavour.Carrot,    Filling.creamCheese,    Icings.butterCream,     CupcakeSize.small),  6, 5);
+        cakeInventory.addCupCake(new CupcakeIngredients(Flavour.Vanilla,   Filling.vanillaCream,   Icings.butterCream,     CupcakeSize.medium), 4, 10);
+        cakeInventory.addCupCake(new CupcakeIngredients(Flavour.Carrot,    Filling.creamCheese,    Icings.butterCream,     CupcakeSize.large),  1, 24);
     }
 }
 

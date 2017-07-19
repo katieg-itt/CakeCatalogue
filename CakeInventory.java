@@ -15,36 +15,40 @@ public class CakeInventory {
         Cakes = new LinkedList();
         
     }
-     public void addCake(
-                            Flavour flavour, 
-                            Filling filling, 
-                            Shape shape, 
-                            Icings icings, 
-                            int size,
-                            float price){
-         
-        Ingredients ingre = new Ingredients(flavour, filling, icings, shape, size); 
-
-        Cake cake = new Cake(ingre, price);
+     public void addCake(CakeIngredients ingre, int size, float price){
+        Cake cake = new Cake(ingre, size, price);
         Cakes.add(cake);
+    }
+     
+    public void addCupCake(CupcakeIngredients ingre, int boxCount, float price) {
+        Cupcake cupcake = new Cupcake(ingre, boxCount, price);
+        Cakes.add(cupcake);
     }
      public Cake getCake(String flavour){
         for (Iterator i = Cakes.iterator(); i.hasNext();){
             Cake cake = (Cake)i.next();
-            if (cake.getLists().equals(flavour)){
+            if (cake.getcakeSpec().equals(flavour)){
                 return cake;
             }
         }
         return null;
     }
      
-     public List searchCake(Ingredients seachIngre){
+     public List searchCake(Ingredients searchIngre){
          System.out.println("Checking Cakes");
          List compareCakes = new LinkedList();
          for(Iterator i = Cakes.iterator(); i.hasNext();){
-             Cake cake = (Cake)i.next();
-             if(cake.getLists().compare(seachIngre)) {
-                 compareCakes.add(cake);
+             if(i.next() instanceof Cake) {
+                Cake cake = (Cake)i.next();
+                if(cake.getcakeSpec().compare(searchIngre)) {
+                    compareCakes.add(cake);
+                }
+             } else {
+                Cupcake cupcake = (Cupcake)i.next();
+                 
+                if(cupcake.getcakeSpec().compare(searchIngre)) {
+                    compareCakes.add(cupcake);
+                }
              }
          }
          return compareCakes;

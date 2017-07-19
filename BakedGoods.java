@@ -11,7 +11,7 @@ public abstract class BakedGoods {
     private double price;
     private Ingredients ingre;
     
-    public BakedGoods(double price, Ingredients ingre){
+    public BakedGoods(Ingredients ingre,double price){
         this.price = price;
         this.ingre = ingre;
     }
