@@ -38,13 +38,15 @@ public class CakeInventory {
          System.out.println("Checking Cakes");
          List compareCakes = new LinkedList();
          for(Iterator i = Cakes.iterator(); i.hasNext();){
-             if(i.next() instanceof Cake) {
-                Cake cake = (Cake)i.next();
+             Object next = i.next(); // put it in a temporary object
+             
+             if(next instanceof Cake) {
+                Cake cake = (Cake)next;
                 if(cake.getcakeSpec().compare(searchIngre)) {
                     compareCakes.add(cake);
                 }
              } else {
-                Cupcake cupcake = (Cupcake)i.next();
+                Cupcake cupcake = (Cupcake)next;
                  
                 if(cupcake.getcakeSpec().compare(searchIngre)) {
                     compareCakes.add(cupcake);
