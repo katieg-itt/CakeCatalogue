@@ -10,12 +10,12 @@ public class BakedGoods {
     
     private double price;
     private BakedGoodsType type;
-    private Ingredients ingre;
+    private BakedGoodsDetails details;
     
     
-    public BakedGoods(BakedGoodsType type, Ingredients ingre,double price){
+    public BakedGoods(BakedGoodsType type, BakedGoodsDetails details, double price){
         this.price = price;
-        this.ingre = ingre;
+        this.details = details;
         this.type = type;
     }
     
@@ -27,7 +27,7 @@ public class BakedGoods {
         return type;
     }
     
-    public Ingredients getcakeSpec(){
-        return ingre;
+    public BakedGoodsDetails getDetails(){
+        return details;
     }
 }
