@@ -6,7 +6,7 @@ package cakecatalogue;
  */
 public enum Flavour {
     
-    Carrot , Chocolate, Vanilla, redVelvet, italianSponge;
+    Carrot , Chocolate, Vanilla, redVelvet, italianSponge, ChocolateChip;
     
     public String toString(){
         switch(this) {
@@ -15,6 +15,7 @@ public enum Flavour {
             case Vanilla : return "Vanilla";
             case redVelvet : return "Red Velvet";
             case italianSponge : return "Italian Sponge";
+            case ChocolateChip : return "Chocolate Chip";
             default : return "unknown";
         }
     }

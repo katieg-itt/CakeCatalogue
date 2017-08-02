@@ -30,7 +30,7 @@ public class BakedGoodsDetails {
     public boolean matches(BakedGoodsDetails otherDetails) {
         for(Iterator i = otherDetails.getDetails().keySet().iterator(); i.hasNext();) {
             String name = (String)i.next();
-            if(!details.get(name).equals(otherDetails.getDetail(name))) {
+            if(details.get(name)==null || !details.get(name).equals(otherDetails.getDetail(name))) {
                 return false;
             }
         }

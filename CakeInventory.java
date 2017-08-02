@@ -21,15 +21,15 @@ public class CakeInventory {
     }
     
      
-     public List searchCake(BakedGoodsDetails details){
-         System.out.println("Checking Cakes");
-         List compareCakes = new LinkedList();
-         for(Iterator i = Cakes.iterator(); i.hasNext();){
-             BakedGoods next = (BakedGoods)i.next();
-             if(details.matches(next.getDetails())) {
-                 compareCakes.add(next);
-             }
-         }
-         return compareCakes;
-     }
+    public List searchCake(BakedGoodsDetails details){
+        List compareCakes = new LinkedList();
+        for(Iterator i = Cakes.iterator(); i.hasNext();){
+            BakedGoods next = (BakedGoods)i.next();
+            BakedGoodsDetails nextDetails = next.getDetails();
+            if(nextDetails.matches(details)) {
+                compareCakes.add(next);
+            }
+        }
+        return compareCakes;
+    }
 }
